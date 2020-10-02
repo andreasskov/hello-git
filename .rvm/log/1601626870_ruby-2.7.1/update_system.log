@@ -1,0 +1,59 @@
+[2020-10-02 10:21:10] requirements_debian_update_system
+requirements_debian_update_system () 
+{ 
+    __rvm_try_sudo apt-get --quiet --yes update || { 
+        \typeset __ret=$?;
+        case ${__ret} in 
+            100)
+                rvm_error "There has been an error while updating your system using \`apt-get\`.
+It seems that there are some 404 Not Found errors for repositories listed in:
+
+    /etc/apt/sources.list
+    /etc/apt/sources.list.d/*.list
+
+Make sure that all repositories are available from your system and verify your setup by running manually:
+
+    sudo apt-get update
+
+Make sure that it works correctly before proceeding with RVM.
+
+If you are working from the GUI instead of the terminal, you might want to verify and fix broken
+repositories using \"Software & Updates\" application.
+"
+            ;;
+        esac;
+        return ${__ret}
+    }
+}
+current path: /home/andreas
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/mnt/c/Program Files/WindowsApps/CanonicalGroupLimited.Ubuntu20.04onWindows_2004.2020.812.0_x64__79rhkp1fndgsc:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files/Symantec.cloud/PlatformAgent/:/mnt/c/Android:/mnt/c/Windows/System32:/mnt/c/Program Files/Intel/WiFi/bin/:/mnt/c/Program Files/Common Files/Intel/WirelessCommon/:/mnt/c/Program Files (x86)/Intel/Intel(R) Management Engine Components/DAL:/mnt/c/Program Files/Intel/Intel(R) Management Engine Components/DAL:/mnt/c/Users/as/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/as/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/as/AppData/Local/atom/bin:/mnt/c/Users/as/AppData/Local/Microsoft/WindowsApps:/snap/bin:/home/andreas/.rvm/bin
+command(2): requirements_debian_update_system ruby-2.7.1
+++ __rvm_try_sudo apt-get --quiet --yes update
+++ typeset -a command_to_run
+++ typeset sudo_path sbin_path missing_paths
+++ command_to_run=("$@")
+++ ((  UID == 0  ))
+++ case "$rvm_autolibs_flag_number" in
+++ is_a_function __rvm_sudo
+++ typeset -f __rvm_sudo
+++ missing_paths=
+++ for sbin_path in /sbin /usr/sbin /usr/local/sbin
+++ [[ -d /sbin ]]
+++ [[ :/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/mnt/c/Program Files/WindowsApps/CanonicalGroupLimited.Ubuntu20.04onWindows_2004.2020.812.0_x64__79rhkp1fndgsc:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files/Symantec.cloud/PlatformAgent/:/mnt/c/Android:/mnt/c/Windows/System32:/mnt/c/Program Files/Intel/WiFi/bin/:/mnt/c/Program Files/Common Files/Intel/WirelessCommon/:/mnt/c/Program Files (x86)/Intel/Intel(R) Management Engine Components/DAL:/mnt/c/Program Files/Intel/Intel(R) Management Engine Components/DAL:/mnt/c/Users/as/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/as/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/as/AppData/Local/atom/bin:/mnt/c/Users/as/AppData/Local/Microsoft/WindowsApps:/snap/bin:/home/andreas/.rvm/bin: != *\:\/\s\b\i\n\:* ]]
+++ for sbin_path in /sbin /usr/sbin /usr/local/sbin
+++ [[ -d /usr/sbin ]]
+++ [[ :/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/mnt/c/Program Files/WindowsApps/CanonicalGroupLimited.Ubuntu20.04onWindows_2004.2020.812.0_x64__79rhkp1fndgsc:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files/Symantec.cloud/PlatformAgent/:/mnt/c/Android:/mnt/c/Windows/System32:/mnt/c/Program Files/Intel/WiFi/bin/:/mnt/c/Program Files/Common Files/Intel/WirelessCommon/:/mnt/c/Program Files (x86)/Intel/Intel(R) Management Engine Components/DAL:/mnt/c/Program Files/Intel/Intel(R) Management Engine Components/DAL:/mnt/c/Users/as/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/as/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/as/AppData/Local/atom/bin:/mnt/c/Users/as/AppData/Local/Microsoft/WindowsApps:/snap/bin:/home/andreas/.rvm/bin: != *\:\/\u\s\r\/\s\b\i\n\:* ]]
+++ for sbin_path in /sbin /usr/sbin /usr/local/sbin
+++ [[ -d /usr/local/sbin ]]
+++ [[ :/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/mnt/c/Program Files/WindowsApps/CanonicalGroupLimited.Ubuntu20.04onWindows_2004.2020.812.0_x64__79rhkp1fndgsc:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files/Symantec.cloud/PlatformAgent/:/mnt/c/Android:/mnt/c/Windows/System32:/mnt/c/Program Files/Intel/WiFi/bin/:/mnt/c/Program Files/Common Files/Intel/WirelessCommon/:/mnt/c/Program Files (x86)/Intel/Intel(R) Management Engine Components/DAL:/mnt/c/Program Files/Intel/Intel(R) Management Engine Components/DAL:/mnt/c/Users/as/AppData/Local/Microsoft/WindowsApps:/mnt/c/Users/as/AppData/Local/Programs/Microsoft VS Code/bin:/mnt/c/Users/as/AppData/Local/atom/bin:/mnt/c/Users/as/AppData/Local/Microsoft/WindowsApps:/snap/bin:/home/andreas/.rvm/bin: != *\:\/\u\s\r\/\l\o\c\a\l\/\s\b\i\n\:* ]]
+++ [[ -n '' ]]
+++ command_to_run=(__rvm_sudo -p "%p password required for '$*': " "${command_to_run[@]}")
+++ __rvm_sudo -p '%p password required for '\''apt-get --quiet --yes update'\'': ' apt-get --quiet --yes update
+++ command sudo -p '%p password required for '\''apt-get --quiet --yes update'\'': ' apt-get --quiet --yes update
+++ sudo -p '%p password required for '\''apt-get --quiet --yes update'\'': ' apt-get --quiet --yes update
+Hit:1 http://archive.ubuntu.com/ubuntu focal InRelease
+Get:2 http://archive.ubuntu.com/ubuntu focal-updates InRelease [111 kB]
+Get:3 http://security.ubuntu.com/ubuntu focal-security InRelease [107 kB]
+Get:4 http://archive.ubuntu.com/ubuntu focal-backports InRelease [98.3 kB]
+Fetched 317 kB in 5s (69.5 kB/s)
+Reading package lists...
